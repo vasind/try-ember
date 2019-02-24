@@ -3611,34 +3611,10 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.4, escape-string-regexp@^
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-escodegen@1.8.x:
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/escodegen/-/escodegen-1.8.1.tgz#5a5b53af4693110bebb0867aa3430dd3b70a1018"
-  integrity sha1-WltTr0aTEQvrsIZ6o0MN07cKEBg=
-  dependencies:
-    esprima "^2.7.1"
-    estraverse "^1.9.1"
-    esutils "^2.0.2"
-    optionator "^0.8.1"
-  optionalDependencies:
-    source-map "~0.2.0"
-
-escodegen@^1.8.0:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/escodegen/-/escodegen-1.11.1.tgz#c485ff8d6b4cdb89e27f4a856e91f118401ca510"
-  integrity sha512-JwiqFD9KdGVVpeuRa68yU3zZnBEOcPs0nKW7wZzXky8Z7tffdYUHbe11bPCV5jYlK6DVdKLWLm0f5I/QlL0Kmw==
-  dependencies:
-    esprima "^3.1.3"
-    estraverse "^4.2.0"
-    esutils "^2.0.2"
-    optionator "^0.8.1"
-  optionalDependencies:
-    source-map "~0.6.1"
-
-eslint-plugin-ember@^5.2.0:
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-ember/-/eslint-plugin-ember-5.4.0.tgz#2980a4389119b37d0450fff8e82d59c9aab126d0"
-  integrity sha512-tYMuxUrTad4f7Dq9gY9GUs9lXwKY+fZklzCJ0JoYbzK2PwSfdrPInr2Y4tHornc9dzPvNbRxsn5b26PrWp2iZg==
+eslint-plugin-ember@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-ember/-/eslint-plugin-ember-6.2.0.tgz#658c24be2435da337b597c924a16aa31d69a1a40"
+  integrity sha512-WKNmTBxvQRr+f1RZ7S+env9BxH18a8uLyqli6Gg6oh5/gl5NChHKe5iGdwv0bC6yUlkocFJkQYheIC25L3npKw==
   dependencies:
     ember-rfc176-data "^0.3.5"
     snake-case "^2.1.0"
