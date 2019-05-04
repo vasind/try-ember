@@ -1,0 +1,54 @@
+# validate this file:
+#   curl --data-binary @.codecov.yml https://codecov.io/validate
+
+# docs:
+#   https://codecov.readme.io/v4.3.6/docs/commit-status
+#   Link to Sample configuration
+#   https://gist.github.com/stevepeak/53bee7b2c326b24a9b4a
+
+codecov:
+  notify:
+    require_ci_to_pass: yes
+
+coverage:
+  precision: 2
+  round: nearest
+  range: '80...100'
+
+  status:
+    project:
+      default:
+        threshold: 0%
+        only_pulls: true
+        paths:
+          - src
+
+    patch:
+      default:
+        target: '90%'
+        only_pulls: true
+        paths:
+          - src
+
+  ignore:
+    - __tests__/**/*
+    - config/**/*
+    - mocks/**/*
+    - public/**/*
+
+parsers:
+  javascript:
+    enable_partials: yes
+  gcov:
+    branch_detection:
+      conditional: yes
+      loop: yes
+      method: no
+      macro: no
+
+comment:
+  layout: 'header, reach, diff, flags, files, footer'
+  require_changes: false
+  require_base: no
+  require_head: yes
+  behavior: default

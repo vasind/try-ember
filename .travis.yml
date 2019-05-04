@@ -1,7 +1,7 @@
 ---
 language: node_js
 node_js:
-  - "6"
+  - 10.8.0
 
 sudo: false
 dist: trusty
@@ -11,6 +11,12 @@ addons:
 
 cache:
   yarn: true
+  directories:
+  - node_modules
+  
+branches:
+  only:
+    - dev
 
 env:
   global:
@@ -25,6 +31,11 @@ install:
   - yarn install --non-interactive
 
 script:
-  - yarn lint:hbs
-  - yarn lint:js
+  #- yarn lint:hbs
+  #- yarn lint:js
   - yarn test
+  
+notifications:
+  email:
+    on_failure: change
+    on_success: change
