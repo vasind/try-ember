@@ -35,6 +35,7 @@ script:
   #- yarn lint:hbs
   #- yarn lint:js
   - yarn test
+  - codecov --token='0fbaa415-86eb-4012-b852-fd9e0c49d8cf'
   
 notifications:
   email:
