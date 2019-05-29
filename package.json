@@ -14,8 +14,9 @@
     "build": "ember build",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
+    "lint:css": "stylelint app/styles",
     "start": "ember serve",
-    "test": "ember test"
+    "test": "COVERAGE=TRUE ember test"
   },
   "husky": {
     "hooks": {
