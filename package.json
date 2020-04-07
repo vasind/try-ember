@@ -15,7 +15,7 @@
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
-    "test": "ember test"
+    "test": "COVERAGE=TRUE ember test"
   },
   "husky": {
     "hooks": {
