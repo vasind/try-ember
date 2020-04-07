@@ -68,4 +68,5 @@ jobs:
            -Dsonar.pullrequest.key=${{ github.event.number }}
            -Dsonar.pullrequest.base=${{ github.base_ref }}
            -Dsonar.pullrequest.branch=${{ github.head_ref }}
-           -Dsonar.branch.name=${{ github.head_ref }}
+#             ERROR: A pull request analysis cannot have the branch analysis parameter 'sonar.branch.name'
+#            -Dsonar.branch.name=${{ github.head_ref }} 
