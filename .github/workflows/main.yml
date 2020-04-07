@@ -24,10 +24,10 @@ jobs:
 
     # Runs a set of commands using the runners shell
     
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
+#     - name: Dump GitHub context
+#       env:
+#         GITHUB_CONTEXT: ${{ toJson(github) }}
+#       run: echo "$GITHUB_CONTEXT"
 #     - name: Dump job context
 #       env:
 #         JOB_CONTEXT: ${{ toJson(job) }}
@@ -49,9 +49,9 @@ jobs:
 #         MATRIX_CONTEXT: ${{ toJson(matrix) }}
 #       run: echo "$MATRIX_CONTEXT"
     
-#     - run: yarn install
-#     - name: Do Ember test and generate report
-#       run: yarn test
+    - run: yarn install
+    - name: Do Ember test and generate report
+      run: yarn test
         
     - name: Setup sonarqube
       uses: warchant/setup-sonar-scanner@v1
@@ -66,5 +66,6 @@ jobs:
            -Dsonar.host.url=https://sonarcloud.io/
            -Dsonar.projectKey=vasind_try-ember
            -Dsonar.pullrequest.key=${{ github.event.number }}
-           -Dsonar.pullrequest.base=${{ github.head_ref }}
-           -Dsonar.pullrequest.branch=${{ github.base_ref }}
+           -Dsonar.pullrequest.base=${{ github.base_ref }}
+           -Dsonar.pullrequest.branch=${{ github.head_ref }}
+           -Dsonar.branch.name=${{ github.head_ref }}
