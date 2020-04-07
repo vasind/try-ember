@@ -49,9 +49,9 @@ jobs:
 #         MATRIX_CONTEXT: ${{ toJson(matrix) }}
 #       run: echo "$MATRIX_CONTEXT"
     
-    - run: yarn install
-    - name: Do Ember test and generate report
-      run: yarn test
+#     - run: yarn install
+#     - name: Do Ember test and generate report
+#       run: yarn test
         
     - name: Setup sonarqube
       uses: warchant/setup-sonar-scanner@v1
@@ -65,6 +65,6 @@ jobs:
            -Dsonar.organization=vasind
            -Dsonar.host.url=https://sonarcloud.io/
            -Dsonar.projectKey=vasind_try-ember
-           -Dsonar.pullrequest.key="$GITHUB_CONTEXT.event.number"
-           -Dsonar.pullrequest.base="$GITHUB_CONTEXT.head_ref"
-           -Dsonar.pullrequest.branch="$GITHUB_CONTEXT.base_ref"
+           -Dsonar.pullrequest.key= ${{ env.GITHUB_CONTEXT.event.number }}
+           -Dsonar.pullrequest.base=${{ GITHUB_CONTEXT.head_ref }}
+           -Dsonar.pullrequest.branch=$GITHUB_CONTEXT.base_ref
