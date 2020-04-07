@@ -65,6 +65,6 @@ jobs:
            -Dsonar.organization=vasind
            -Dsonar.host.url=https://sonarcloud.io/
            -Dsonar.projectKey=vasind_try-ember
-           -Dsonar.pullrequest.key= ${{ github.event.number }}
-#            -Dsonar.pullrequest.base=${{ env.GITHUB_CONTEXT.head_ref }}
-#            -Dsonar.pullrequest.branch=$GITHUB_CONTEXT.base_ref
+           -Dsonar.pullrequest.key=${{ github.event.number }}
+           -Dsonar.pullrequest.base=${{ github.head_ref }}
+           -Dsonar.pullrequest.branch=${{ github.base_ref }}
