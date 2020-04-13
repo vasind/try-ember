@@ -1,7 +1,6 @@
 # try-ember
 
 This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
 
 [![codecov](https://codecov.io/gh/vasind/try-ember/branch/master/graph/badge.svg)](https://codecov.io/gh/vasind/try-ember)
 
