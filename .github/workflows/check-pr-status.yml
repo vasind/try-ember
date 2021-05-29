@@ -21,3 +21,4 @@ jobs:
     steps:
     - run: |
         echo PR #${{ github.event.number }} has been closed without being merged
+        echo PR Branch #${{ github.event.pull_request.head.ref }} closed
