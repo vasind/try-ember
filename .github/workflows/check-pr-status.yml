@@ -26,7 +26,7 @@ jobs:
         echo PR Branch #${{ github.event.pull_request.head.ref }} closed
         curl -XDELETE -sSL \
           -H "Authorization: token ${GITHUB_TOKEN}" \
-          -H ""Accept: application/vnd.github.v3+json"" \
+          -H "Accept: application/vnd.github.v3+json" \
                             --output /dev/null \
           --write-out "%{http_code}" \
           "https://api.github.com/repos/vasind/try-ember/git/refs/heads/${{ github.event.pull_request.head.ref }}"
