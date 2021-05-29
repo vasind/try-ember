@@ -1,4 +1,4 @@
 exclude: 
   - master
   - dev
-delete_closed_pr: true
+delete_closed_pr: false
