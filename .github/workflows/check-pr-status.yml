@@ -1,4 +1,4 @@
-name: Close Pull Request
+name: Delete Branch on PR merge
 
 # only trigger on pull request closed events
 on:
@@ -11,22 +11,22 @@ jobs:
     # this job will only run if the PR has been merged
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-    steps:
-    - run: |
-        echo PR #${{ github.event.number }} has been merged
-  close_job:
-    # this job will only run if the PR has been closed without being merged
-    if: github.event.pull_request.merged == false
-    runs-on: ubuntu-latest
     env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
     - run: |
-        echo PR #${{ github.event.number }} has been closed without being merged
-        echo PR Branch #${{ github.event.pull_request.head.ref }} closed
+        echo PR #${{ github.event.number }} has been merged
         curl -XDELETE -sSL \
           -H "Authorization: token ${GITHUB_TOKEN}" \
           -H "Accept: application/vnd.github.v3+json" \
                             --output /dev/null \
           --write-out "%{http_code}" \
           "https://api.github.com/repos/vasind/try-ember/git/refs/heads/${{ github.event.pull_request.head.ref }}"
+  close_job:
+    # this job will only run if the PR has been closed without being merged
+    if: github.event.pull_request.merged == false
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo PR #${{ github.event.number }} has been closed without being merged
+        echo PR Branch #${{ github.event.pull_request.head.ref }} closed
