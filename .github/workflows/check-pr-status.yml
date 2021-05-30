@@ -16,12 +16,17 @@ jobs:
     steps:
     - run: |
         echo PR #${{ github.event.number }} has been merged
-        curl -XDELETE -sSL \
+        if [[ ${{ github.event.pull_request.head.ref }} == "vasind-patch-2"  ]] \
+        then \
+          echo "Master (protected) branch cannot be deleted" \
+        else \
+          curl -XDELETE -sSL \
           -H "Authorization: token ${GITHUB_TOKEN}" \
           -H "Accept: application/vnd.github.v3+json" \
                             --output /dev/null \
           --write-out "%{http_code}" \
           "https://api.github.com/repos/vasind/try-ember/git/refs/heads/${{ github.event.pull_request.head.ref }}"
+        fi \
   close_job:
     # this job will only run if the PR has been closed without being merged
     if: github.event.pull_request.merged == false
