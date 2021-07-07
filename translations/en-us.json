@@ -5,5 +5,6 @@
   "rem_password": "Remember Password",
   "sign_in": "Sign In",
   "sign_in_google": "Sign in with Google",
-  "sign_in_facebook": "Sign in with Facebook"
+  "sign_in_facebook": "Sign in with Facebook",
+  "loggedin": "Logged in"
 }

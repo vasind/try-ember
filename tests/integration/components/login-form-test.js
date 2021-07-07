@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { render, fillIn, click } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('Integration | Component | login-form', function (hooks) {
@@ -12,17 +12,11 @@ module('Integration | Component | login-form', function (hooks) {
 
     await render(hbs`{{login-form}}`);
 
-    //assert.equal(this.element.textContent.trim(), '');
+    fillIn('#inputEmail', 'user');
+    fillIn('#inputPassword', 'password');
 
-    // Template block usage:
-    await render(hbs`
-      {{#login-form}}
-        template block text
-      {{/login-form}}
-    `);
+    await click('#siginBtn');
 
-    assert.ok(true); //let the travis build pass for now
-
-    //assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom('.card-title.text-center').hasText('Logged in');
   });
 });
